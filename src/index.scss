@@ -1,0 +1,11 @@
+@import '../src/sass/base/typography';
+@import '../src/sass/Helpers/variables';
+
+html, body {
+  background-color: $second-color;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+@import '../base/typography';
+@import '../Helpers/variables';
+
+.container {
+    max-width: fit-content;
+    background-color: $third-color;
+    border-radius: $radius;
+    text-align: left;
+    color: $white;
+    margin-top: 20px;
+    padding: 20px;
+}

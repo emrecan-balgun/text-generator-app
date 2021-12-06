@@ -1,0 +1,29 @@
+@import '../base/typography';
+@import '../Helpers/variables';
+
+.form {
+    margin-top: 10px;
+    display: flex;
+    // flex-flow: row wrap;
+    // align-items: center;
+    flex-direction: row;
+    gap: 20px;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-text {
+            font-size: $medium-font-size;
+            color: $white;
+            font-weight: $font-medium;
+            margin-bottom: 3px;
+        }
+
+        &-input {
+            padding: 5px;
+            border-radius: $radius;
+        }
+    }
+}

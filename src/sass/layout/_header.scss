@@ -1,0 +1,10 @@
+@import '../base/typography';
+@import '../Helpers/variables';
+
+.header {
+    &__title {
+        font-size: $mega-font-size;
+        color: $first-color;
+        text-transform: capitalize;
+    }
+}
