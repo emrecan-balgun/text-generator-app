@@ -1,18 +1,26 @@
-import { useState, useEffect } from 'react'
 import Header from './Header'
 import Form from './Form'
-import { useSelector } from 'react-redux'
-import { value } from '../redux/paragraphSlice'
 import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { includeHTML, value } from '../redux/paragraphSlice'
 
 function Container() {
     const count = useSelector(value);
+    const include = useSelector(includeHTML);
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    let format;
+
     function changeData(count) {
         const fetchData = async () => {
-            const response = await axios.get(`https://baconipsum.com/api/?type=all-meat&paras=${count}&format=text`)
+            if(include === 'no') 
+                format = 'text';
+            else 
+                format = 'html';
+                
+            const response = await axios.get(`https://baconipsum.com/api/?type=all-meat&paras=${count}&format=${format}`)
             setData(response.data);
             setIsLoading(false)
         }
@@ -21,7 +29,7 @@ function Container() {
 
     useEffect(() => {
         changeData(count);
-    }, [count])
+    }, [count, include])
     
     return (
         <>
