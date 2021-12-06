@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { changeParagraph, value } from '../redux/paragraphSlice'
+import { changeParagraph, changeIncludeHTML, value, includeHTML } from '../redux/paragraphSlice'
 
 function Form() {
     const count = useSelector(value);
+    const include = useSelector(includeHTML);
     const dispatch = useDispatch();
 
     if(count < 1) {
@@ -18,9 +19,9 @@ function Form() {
             </div>
             <div className="form__group">
                 <span className="form__group-text">Include HTML</span>
-                <select className="form__group-input" name="html">
-                    <option value="yes">Yes</option>
+                <select className="form__group-input" name="html" onChange={e => dispatch(changeIncludeHTML(e.target.value))}>
                     <option value="no">No</option>
+                    <option value="yes">Yes</option>
                 </select>
             </div>
         </div>
