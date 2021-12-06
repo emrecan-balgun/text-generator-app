@@ -5,6 +5,11 @@ function Form() {
     const count = useSelector(value);
     const dispatch = useDispatch();
 
+    if(count < 1) {
+        window.alert("You cannot enter a value less than one!")
+        dispatch(changeParagraph(1))
+    }
+
     return (
         <div className="form">
             <div className="form__group">
