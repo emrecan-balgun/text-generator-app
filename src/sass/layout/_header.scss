@@ -7,4 +7,34 @@
         color: $first-color;
         text-transform: capitalize;
     }
+
+    @media screen and (max-width: $small-screen) {
+        &__title {
+            font-size: $small-font-size;
+        }
+    }
+
+    @media screen and (min-width: $small-screen) {
+        &__title {
+            font-size: $medium-font-size;
+        }
+    }
+
+    @media screen and (min-width: $medium-screen) {
+        &__title {
+            font-size: $big-font-size;
+        }
+    }
+
+    @media screen and (min-width: $large-screen) {
+        &__title {
+            font-size: $bigger-font-size;
+        }
+    }
+
+    @media screen and (min-width: $extra-large-screen) {
+        &__title {
+            font-size: $mega-font-size;
+        }
+    }
 }

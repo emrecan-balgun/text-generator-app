@@ -6,7 +6,26 @@
     background-color: $third-color;
     border-radius: $radius;
     text-align: left;
+    font-size: $medium-font-size;
     color: $white;
     margin-top: 20px;
     padding: 20px;
+
+    @media screen and (max-width: $small-screen) {
+        & {
+            font-size: $smaller-font-size;
+        }
+    }
+
+    @media screen and (min-width: $small-screen) {
+        & {
+            font-size: $small-font-size;
+        }
+    }
+
+    @media screen and (min-width: $medium-screen) {
+        & {
+            font-size: $medium-font-size;
+        }
+    }
 }
