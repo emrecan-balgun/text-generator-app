@@ -1,9 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { changeParagraph, changeIncludeHTML, value, includeHTML } from '../redux/paragraphSlice'
+import { changeParagraph, changeIncludeHTML, value } from '../redux/paragraphSlice'
 
 function Form() {
     const count = useSelector(value);
-    const include = useSelector(includeHTML);
     const dispatch = useDispatch();
 
     if(count < 1) {

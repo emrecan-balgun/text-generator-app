@@ -11,24 +11,19 @@ function Container() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    let format;
-
-    function changeData(count) {
+    useEffect(() => {
+        let format;
         const fetchData = async () => {
             if(include === 'no') 
                 format = 'text';
             else 
                 format = 'html';
-                
+
             const response = await axios.get(`https://baconipsum.com/api/?type=all-meat&paras=${count}&format=${format}`)
             setData(response.data);
             setIsLoading(false)
         }
         fetchData();
-    }
-
-    useEffect(() => {
-        changeData(count);
     }, [count, include])
     
     return (
